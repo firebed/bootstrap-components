@@ -1,5 +1,6 @@
 @props([
     'error' => NULL,
+    'currencySymbol' => config('app.number_format.currency_symbol', '$'),
     'groupsSeparator' => config('app.number_format.group_separator', ','),
     'decimalSeparator' => config('app.number_format.decimal_separator', '.'),
     'symbolPlacement' => config('app.number_format.symbol_placement', 'p'),
@@ -13,7 +14,7 @@
             digitGroupSeparator           : '{{ $groupsSeparator }}',
             decimalCharacter              : '{{ $decimalSeparator }}',
             decimalCharacterAlternative   : '{{ $groupsSeparator }}',
-            currencySymbol                : '\u202f%',
+            currencySymbol                : '{{ $currencySymbol }}',
             currencySymbolPlacement       : '{{ $symbolPlacement }}',
             negativePositiveSignPlacement : '{{ $signPlacement }}',
             rawValueDivisor               : 100,
