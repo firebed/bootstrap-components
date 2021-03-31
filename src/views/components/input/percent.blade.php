@@ -9,12 +9,12 @@
 <input type="text"
        x-data="{ value: @entangle($attributes->wire('model')) }"
        x-init="new AutoNumeric($el, {
-            digitGroupSeparator           : '{{ $digit }}',
-            decimalCharacter              : '{{ $decimal }}',
+            digitGroupSeparator           : '{{ $groupsSeparator }}',
+            decimalCharacter              : '{{ $decimalSeparator }}',
             decimalCharacterAlternative   : '{{ $digit }}',
             currencySymbol                : '\u202f%',
-            currencySymbolPlacement       : '{{ $symbol }}',
-            negativePositiveSignPlacement : '{{ $sign }}',
+            currencySymbolPlacement       : '{{ $symbolPlacement }}',
+            negativePositiveSignPlacement : '{{ $signPlacement }}',
             rawValueDivisor               : 100,
             watchExternalChanges          : true,
             showWarnings                  : false
