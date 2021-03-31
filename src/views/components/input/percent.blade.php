@@ -1,16 +1,21 @@
 @props([
-    'error' => NULL
+    'error' => NULL,
+    'digitGroupSeparator' => '.',
+    'decimalCharacter' => ',',
+    'decimalCharacterAlternative' => '.',
+    'currencySymbolPlacement' => 's',
+    'signPlacement' => 'p'
 ])
 
 <input type="text"
        x-data="{ value: @entangle($attributes->wire('model')) }"
        x-init="new AutoNumeric($el, {
-            digitGroupSeparator           : '.',
-            decimalCharacter              : ',',
-            decimalCharacterAlternative   : '.',
+            digitGroupSeparator           : '{{ $digitGroupSeparator }}',
+            decimalCharacter              : '{{ $decimalCharacter }}',
+            decimalCharacterAlternative   : '{{ $decimalCharacterAlternative }}',
             currencySymbol                : '\u202f%',
-            currencySymbolPlacement       : 's',
-            negativePositiveSignPlacement : 'p',
+            currencySymbolPlacement       : '{{ $currencySymbolPlacement }}',
+            negativePositiveSignPlacement : '{{ $signPlacement }}',
             rawValueDivisor               : 100,
             watchExternalChanges          : true,
             showWarnings                  : false
