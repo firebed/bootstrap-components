@@ -16,6 +16,11 @@
     "laravel/framework": "^8.0",
     "livewire/livewire": "^2.3"
   },
+  "autoload": {
+    "psr-4": {
+      "Firebed\\": "src/"
+    }
+  },
   "extra": {
     "laravel": {
       "providers": [
