@@ -19,11 +19,8 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Livewire\\LivewireServiceProvider"
-      ],
-      "aliases": {
-        "Livewire": "Livewire\\Livewire"
-      }
+        "Firebed\\BootstrapServiceProvider"
+      ]
     }
   }
 }
