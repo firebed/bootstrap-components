@@ -15,5 +15,15 @@
   "require-dev": {
     "laravel/framework": "^8.0",
     "livewire/livewire": "^2.3"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Livewire\\LivewireServiceProvider"
+      ],
+      "aliases": {
+        "Livewire": "Livewire\\Livewire"
+      }
+    }
   }
 }
