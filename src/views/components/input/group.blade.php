@@ -6,7 +6,7 @@
 
 <div {{ $attributes }}>
     @if($inline)
-        <div class="row align-items-center">
+        <div class="row align-items-baseline">
             <label for="{{ $for }}" class="col-4">{{ $label }}</label>
             <div class="col">
                 {{ $slot }}
