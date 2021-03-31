@@ -10,5 +10,10 @@
     }
   ],
   "require": {
+    "php": "^8.0"
+  },
+  "require-dev": {
+    "laravel/framework": "^8.0",
+    "livewire/livewire": "^2.3"
   }
 }
