@@ -5,7 +5,8 @@
     'groupsSeparator' => config('app.number_format.group_separator', ','),
     'decimalSeparator' => config('app.number_format.decimal_separator', '.'),
     'symbolPlacement' => config('app.number_format.symbol_placement', 'p'),
-    'signPlacement' => config('app.number_format.sign_placement', 'p')
+    'signPlacement' => config('app.number_format.sign_placement', 'p'),
+    'decimalPadding' => 'floats'
 ])
 
 <input type="text"
@@ -20,11 +21,12 @@
             negativePositiveSignPlacement : '{{ $signPlacement }}',
             minimumValue                  : '{{ $min }}',
             maximumValue                  : '{{ $max }}',
+            allowDecimalPadding           : '{{ $decimalPadding }}',
             rawValueDivisor               : 100,
             watchExternalChanges          : true,
             showWarnings                  : false
        })"
-        x-on:input="value = AutoNumeric.getNumber($el)"
+       x-on:input="value = AutoNumeric.getNumber($el)"
         {{ $attributes->whereDoesntStartWith('wire:model')->merge(['class' => 'form-control' . ($error && $errors->has($error) ? ' is-invalid' : '')]) }}>
 
 @if($error)
