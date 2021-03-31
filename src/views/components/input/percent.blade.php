@@ -11,7 +11,7 @@
 <input type="text"
        autocomplete="off"
        x-data="{ value: @entangle($attributes->wire('model')) }"
-       x-init="new AutoNumeric($el, {
+       x-init="new AutoNumeric($el, value, {
             digitGroupSeparator           : '{{ $groupsSeparator }}',
             decimalCharacter              : '{{ $decimalSeparator }}',
             decimalCharacterAlternative   : '{{ $groupsSeparator }}',
