@@ -1,6 +1,6 @@
 @props([
     'error' => NULL,
-    'minValue' => '-10000000000000',
+    'min' => '-10000000000000',
     'signPlacement' => config('app.number_format.sign_placement', 'p')
 ])
 
@@ -11,7 +11,7 @@
             digitGroupSeparator           : '',
             negativePositiveSignPlacement : '{{ $signPlacement }}',
             decimalPlaces                 : '0',
-            minimumValue                  : '{{ $minValue }}',
+            minimumValue                  : '{{ $min }}',
             watchExternalChanges          : true,
             showWarnings                  : false
        })"

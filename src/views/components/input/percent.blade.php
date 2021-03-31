@@ -1,6 +1,6 @@
 @props([
     'error' => NULL,
-    'minValue' => '-10000000000000',
+    'min' => '-10000000000000',
     'groupsSeparator' => config('app.number_format.group_separator', ','),
     'decimalSeparator' => config('app.number_format.decimal_separator', '.'),
     'symbolPlacement' => config('app.number_format.symbol_placement', 'p'),
@@ -17,7 +17,7 @@
             currencySymbol                : '\u202f%',
             currencySymbolPlacement       : '{{ $symbolPlacement }}',
             negativePositiveSignPlacement : '{{ $signPlacement }}',
-            minimumValue                  : '{{ $minValue }}',
+            minimumValue                  : '{{ $min }}',
             rawValueDivisor               : 100,
             watchExternalChanges          : true,
             showWarnings                  : false
