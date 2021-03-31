@@ -1,6 +1,6 @@
 {
-  "name": "vendor_name/bs",
-  "description": "description",
+  "name": "firebed/bs",
+  "description": "Laravel Boostrap v5 components",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
