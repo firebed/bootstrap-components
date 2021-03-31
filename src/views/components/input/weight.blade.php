@@ -1,7 +1,7 @@
 @props([
     'error' => NULL,
-    'min' => '-10000000000000',
-    'decimalPlaces' => 2,
+    'decimalPlaces' => 0,
+    'unit' => 'gr',
     'groupsSeparator' => config('app.number_format.group_separator', ','),
     'decimalSeparator' => config('app.number_format.decimal_separator', '.'),
     'signPlacement' => config('app.number_format.sign_placement', 'p')
@@ -14,9 +14,10 @@
             digitGroupSeparator           : '{{ $groupsSeparator }}',
             decimalCharacter              : '{{ $decimalSeparator }}',
             decimalCharacterAlternative   : '{{ $groupsSeparator }}',
-            negativePositiveSignPlacement : '{{ $signPlacement }}',
+            currencySymbol                : '{{ "\u202f$unit" }}',
+            currencySymbolPlacement       : 's',
             decimalPlaces                 : '{{ $decimalPlaces }}',
-            minimumValue                  : '{{ $min }}',
+            minimumValue                  : '0',
             watchExternalChanges          : true,
             showWarnings                  : false
        })"
