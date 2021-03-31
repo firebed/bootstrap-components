@@ -3,11 +3,19 @@
 ])
 
 <input type="text"
-       x-data
-       x-init="new AutoNumeric($el, AutoNumericOptions.percentPos)"
-       x-on:change="$dispatch('input', AutoNumeric.getNumber($el))"
+       x-data="{ value: @entangle($attributes->wire('model')) }"
+       x-init="new AutoNumeric($el, {
+            digitGroupSeparator         : '.',
+            decimalCharacter            : ',',
+            decimalCharacterAlternative : '.',
+            currencySymbol              : '\u202f%',
+            rawValueDivisor             : 100,
+            watchExternalChanges        : true,
+            showWarnings                : false
+       })"
+       x-on:change="value = AutoNumeric.getNumber($el)"
         {{ $attributes->merge(['class' => 'form-control' . ($error && $errors->has($error) ? ' is-invalid' : '')]) }}
-        {{ $attributes }}>
+        {{ $attributes->whereDoesntStartWith('wire:model') }}>
 
 @if($error)
     @error($error)
