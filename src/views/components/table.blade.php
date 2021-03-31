@@ -9,5 +9,9 @@
     {{ $slot }}
     </tbody>
 
-    {{ $foot ?? '' }}
+    @isset($foot)
+        <tr>
+            {{ $foot }}
+        </tr>
+    @endisset
 </table>
