@@ -1,5 +1,6 @@
 @props([
     'error' => NULL,
+    'minValue' => '-10000000000000',
     'groupsSeparator' => config('app.number_format.group_separator', ','),
     'decimalSeparator' => config('app.number_format.decimal_separator', '.'),
     'symbolPlacement' => config('app.number_format.symbol_placement', 'p'),
@@ -16,13 +17,13 @@
             currencySymbol                : '\u202f%',
             currencySymbolPlacement       : '{{ $symbolPlacement }}',
             negativePositiveSignPlacement : '{{ $signPlacement }}',
+            minimumValue                  : '{{ $minValue }}',
             rawValueDivisor               : 100,
             watchExternalChanges          : true,
             showWarnings                  : false
        })"
-       x-on:input="value = AutoNumeric.getNumber($el)"
-        {{ $attributes->merge(['class' => 'form-control' . ($error && $errors->has($error) ? ' is-invalid' : '')]) }}
-        {{ $attributes->whereDoesntStartWith('wire:model') }}>
+        x-on:input="value = AutoNumeric.getNumber($el)"
+        {{ $attributes->whereDoesntStartWith('wire:model')->merge(['class' => 'form-control' . ($error && $errors->has($error) ? ' is-invalid' : '')]) }}>
 
 @if($error)
     @error($error)

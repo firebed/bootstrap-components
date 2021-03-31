@@ -1,10 +1,6 @@
 @props([
     'error' => NULL,
-    'minValue' => '0',
-    'currency' => config('app.number_format.currency_symbol', '$'),
-    'groupsSeparator' => config('app.number_format.group_separator', ','),
-    'decimalSeparator' => config('app.number_format.decimal_separator', '.'),
-    'currencyPlacement' => config('app.number_format.symbol_placement', 'p'),
+    'minValue' => '-10000000000000',
     'signPlacement' => config('app.number_format.sign_placement', 'p')
 ])
 
@@ -12,12 +8,9 @@
        autocomplete="off"
        x-data="{ value: @entangle($attributes->wire('model')) }"
        x-init="new AutoNumeric($el, {
-            digitGroupSeparator           : '{{ $groupsSeparator }}',
-            decimalCharacter              : '{{ $decimalSeparator }}',
-            decimalCharacterAlternative   : '{{ $groupsSeparator }}',
-            currencySymbol                : '{{ $currency }}',
-            currencySymbolPlacement       : '{{ $currencyPlacement }}',
+            digitGroupSeparator           : '',
             negativePositiveSignPlacement : '{{ $signPlacement }}',
+            decimalPlaces                 : '0',
             minimumValue                  : '{{ $minValue }}',
             watchExternalChanges          : true,
             showWarnings                  : false

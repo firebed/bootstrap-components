@@ -1,10 +1,9 @@
 @props([
     'error' => NULL,
-    'minValue' => '0',
-    'currency' => config('app.number_format.currency_symbol', '$'),
+    'minValue' => '-10000000000000',
+    'decimalPlaces' => 2,
     'groupsSeparator' => config('app.number_format.group_separator', ','),
     'decimalSeparator' => config('app.number_format.decimal_separator', '.'),
-    'currencyPlacement' => config('app.number_format.symbol_placement', 'p'),
     'signPlacement' => config('app.number_format.sign_placement', 'p')
 ])
 
@@ -15,9 +14,10 @@
             digitGroupSeparator           : '{{ $groupsSeparator }}',
             decimalCharacter              : '{{ $decimalSeparator }}',
             decimalCharacterAlternative   : '{{ $groupsSeparator }}',
-            currencySymbol                : '{{ $currency }}',
-            currencySymbolPlacement       : '{{ $currencyPlacement }}',
+            currencySymbol                : '{{ $currencySymbol }}',
+            currencySymbolPlacement       : '{{ $symbolPlacement }}',
             negativePositiveSignPlacement : '{{ $signPlacement }}',
+            decimalPlaces                 : '{{ $decimalPlaces }}',
             minimumValue                  : '{{ $minValue }}',
             watchExternalChanges          : true,
             showWarnings                  : false
