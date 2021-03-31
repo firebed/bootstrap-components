@@ -11,7 +11,7 @@
        x-init="new AutoNumeric($el, {
             digitGroupSeparator           : '{{ $groupsSeparator }}',
             decimalCharacter              : '{{ $decimalSeparator }}',
-            decimalCharacterAlternative   : '{{ $digit }}',
+            decimalCharacterAlternative   : '{{ $groupsSeparator }}',
             currencySymbol                : '\u202f%',
             currencySymbolPlacement       : '{{ $symbolPlacement }}',
             negativePositiveSignPlacement : '{{ $signPlacement }}',
