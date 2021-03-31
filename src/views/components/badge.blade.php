@@ -7,8 +7,8 @@
 
     $color = match($type){
         'secondary' => 'bg-gray-200',
-        'success'   => 'bg-green-200',
-        'info'      => 'bg-teal-200',
+        'success'   => 'bg-teal-200',
+        'info'      => 'bg-cyan-200',
         'warning'   => 'bg-yellow-200',
         'danger'    => 'bg-red-200',
         default     => 'bg-blue-200'
