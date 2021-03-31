@@ -1,6 +1,6 @@
 {
   "name": "firebed/bootstrap-components",
-  "description": "Laravel Boostrap v5 components",
+  "description": "Boostrap components for laravel framework",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
