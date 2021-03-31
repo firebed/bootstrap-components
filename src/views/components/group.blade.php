@@ -5,7 +5,7 @@
 
 <div {{ $attributes }}>
     @if($inline)
-        <div class="row align-items-center">
+        <div class="row align-items-baseline">
             <div class="col-4">{{ $label }}</div>
             <div class="col">
                 {{ $slot }}
