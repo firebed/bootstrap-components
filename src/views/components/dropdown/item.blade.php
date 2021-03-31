@@ -1,10 +1,14 @@
-@props(['type' => 'a', 'href' => '#', 'disabled' => FALSE])
+@props([
+    'disabled' => FALSE,
+    'type' => 'link',
+    'href' => '#',
+])
 
 <li>
     @if($type === 'button')
-        <button {{ $attributes->merge(['class' => 'dropdown-item py-2']) }} type="button" @if($disabled) disabled @endif {{ $attributes }}>{{ $slot }}</button>
-    @elseif ($type === 'a')
-        <a {{ $attributes->merge(['class' => 'dropdown-item py-2']) }} href="{{ $href }}" {{ $attributes }}>{{ $slot }}</a>
+        <button {{ $attributes->merge(['class' => 'dropdown-item']) }} type="button" @if($disabled) disabled @endif {{ $attributes }}>{{ $slot }}</button>
+    @elseif ($type === 'link')
+        <a {{ $attributes->merge(['class' => 'dropdown-item']) }} href="{{ $href }}" {{ $attributes }}>{{ $slot }}</a>
     @else
         {{ $slot }}
     @endif
