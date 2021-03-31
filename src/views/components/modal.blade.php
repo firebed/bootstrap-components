@@ -11,6 +11,7 @@
         $watch('show', value => value ? bootstrap.Modal.getInstance($el).show() : bootstrap.Modal.getInstance($el).hide());
         $el.addEventListener('hidden.bs.modal', () => show = false);
     "
+        id="{{ $id ?? md5($attributes->wire('model')) }}"
         class="modal fade"
         tabindex="-1" xmlns:wire="http://www.w3.org/1999/xhtml">
 
