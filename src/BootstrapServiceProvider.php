@@ -13,6 +13,10 @@ class BootstrapServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadViewsFrom(__DIR__.'/views', 'bs');
+        $this->loadViewsFrom(__DIR__ . '/views', 'bs');
+
+        $this->mergeConfigFrom(__DIR__ . '/config/intl.php', 'intl');
+
+        $this->publishes([__DIR__ . '/config/intl.php' => config_path('intl.php')]);
     }
 }

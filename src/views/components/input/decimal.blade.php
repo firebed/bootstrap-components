@@ -1,10 +1,11 @@
 @props([
     'error' => NULL,
     'min' => '-10000000000000',
+    'max' => '10000000000000',
     'decimalPlaces' => 2,
-    'groupsSeparator' => config('app.number_format.group_separator', ','),
-    'decimalSeparator' => config('app.number_format.decimal_separator', '.'),
-    'signPlacement' => config('app.number_format.sign_placement', 'p')
+    'groupsSeparator' => config('intl.group_separator'),
+    'decimalSeparator' => config('intl.decimal_separator'),
+    'signPlacement' => config('intl.sign_placement')
 ])
 
 <input type="text"
@@ -17,6 +18,7 @@
             negativePositiveSignPlacement : '{{ $signPlacement }}',
             decimalPlaces                 : '{{ $decimalPlaces }}',
             minimumValue                  : '{{ $min }}',
+            maximumValue                  : '{{ $max }}',
             watchExternalChanges          : true,
             showWarnings                  : false
        })"

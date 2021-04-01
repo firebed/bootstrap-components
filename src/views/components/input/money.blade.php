@@ -1,11 +1,12 @@
 @props([
     'error' => NULL,
     'min' => '0',
-    'currency' => config('app.number_format.currency_symbol', '$'),
-    'groupsSeparator' => config('app.number_format.group_separator', ','),
-    'decimalSeparator' => config('app.number_format.decimal_separator', '.'),
-    'currencyPlacement' => config('app.number_format.symbol_placement', 'p'),
-    'signPlacement' => config('app.number_format.sign_placement', 'p')
+    'max' => '10000000000000',
+    'currency' => config('intl.currency'),
+    'groupsSeparator' => config('intl.group_separator'),
+    'decimalSeparator' => config('intl.decimal_separator'),
+    'currencyPlacement' => config('intl.currency_placement'),
+    'signPlacement' => config('intl.sign_placement')
 ])
 
 <input type="text"
@@ -19,6 +20,7 @@
             currencySymbolPlacement       : '{{ $currencyPlacement }}',
             negativePositiveSignPlacement : '{{ $signPlacement }}',
             minimumValue                  : '{{ $min }}',
+            maximumValue                  : '{{ $max }}',
             watchExternalChanges          : true,
             showWarnings                  : false
        })"

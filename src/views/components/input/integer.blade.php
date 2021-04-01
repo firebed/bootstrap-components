@@ -1,7 +1,8 @@
 @props([
     'error' => NULL,
     'min' => '-10000000000000',
-    'signPlacement' => config('app.number_format.sign_placement', 'p')
+    'max' => '10000000000000',
+    'signPlacement' => config('intl.sign_placement')
 ])
 
 <input type="text"
@@ -12,6 +13,7 @@
             negativePositiveSignPlacement : '{{ $signPlacement }}',
             decimalPlaces                 : '0',
             minimumValue                  : '{{ $min }}',
+            maximumValue                  : '{{ $max }}',
             watchExternalChanges          : true,
             showWarnings                  : false
        })"

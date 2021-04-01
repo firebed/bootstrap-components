@@ -1,10 +1,11 @@
 @props([
     'error' => NULL,
+    'max' => '10000000000000',
     'decimalPlaces' => 0,
     'unit' => 'gr',
-    'groupsSeparator' => config('app.number_format.group_separator', ','),
-    'decimalSeparator' => config('app.number_format.decimal_separator', '.'),
-    'signPlacement' => config('app.number_format.sign_placement', 'p')
+    'groupsSeparator' => config('intl.group_separator'),
+    'decimalSeparator' => config('intl.decimal_separator'),
+    'signPlacement' => config('intl.sign_placement')
 ])
 
 <input type="text"
@@ -17,6 +18,7 @@
             currencySymbol                : '{{ "\u202f$unit" }}',
             currencySymbolPlacement       : 's',
             decimalPlaces                 : '{{ $decimalPlaces }}',
+            maximumValue                  : '{{ $max }}',
             minimumValue                  : '0',
             watchExternalChanges          : true,
             showWarnings                  : false
