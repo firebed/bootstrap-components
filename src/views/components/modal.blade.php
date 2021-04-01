@@ -7,13 +7,13 @@
     <div wire:ignore.self
          x-data="{
             show: @entangle($attributes->wire('model')),
-            autofocus() { let focusable = $el.querySelector('[autofocus]'); if (focusable) focusable.focus() }
+            autofocus() { const focusable = $el.querySelector('[autofocus]'); if (focusable) focusable.focus() }
          }"
          x-init="
             new bootstrap.Modal($el, {backdrop: '{{ $backdrop }}'});
             $watch('show', value => value ? bootstrap.Modal.getInstance($el).show() : bootstrap.Modal.getInstance($el).hide());
             $el.addEventListener('hidden.bs.modal', () => show = false);
-            $el.addEventListener('shown.bs.modal', () => $el.querySelector('[autofocus]').focus());
+            $el.addEventListener('shown.bs.modal', autofocus);
         "
          id="{{ $id ?? md5($attributes->wire('model')) }}"
          class="modal fade"
