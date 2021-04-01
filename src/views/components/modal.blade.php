@@ -5,10 +5,13 @@
 
 @if($attributes->wire('model'))
     <div wire:ignore.self
-         x-data="{ show: @entangle($attributes->wire('model')) }"
+         x-data="{
+            show: @entangle($attributes->wire('model')),
+            autofocus() { let focusable = $el.querySelector('[autofocus]'); if (focusable) focusable.focus() }
+         }"
          x-init="
             new bootstrap.Modal($el, {backdrop: '{{ $backdrop }}'});
-            $watch('show', value => value ? bootstrap.Modal.getInstance($el).show() : bootstrap.Modal.getInstance($el).hide());
+            $watch('show', value => value ? bootstrap.Modal.getInstance($el).show() && setTimeout(autofocus, 50) : bootstrap.Modal.getInstance($el).hide());
             $el.addEventListener('hidden.bs.modal', () => show = false);
         "
          id="{{ $id ?? md5($attributes->wire('model')) }}"

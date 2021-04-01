@@ -12,7 +12,8 @@
 <input type="text"
        autocomplete="off"
        x-data="{ value: @entangle($attributes->wire('model')) }"
-       x-init="new AutoNumeric($el, value, {
+       x-init="
+        new AutoNumeric($el, value, {
             digitGroupSeparator           : '{{ $groupsSeparator }}',
             decimalCharacter              : '{{ $decimalSeparator }}',
             decimalCharacterAlternative   : '{{ $groupsSeparator }}',
@@ -21,9 +22,9 @@
             negativePositiveSignPlacement : '{{ $signPlacement }}',
             minimumValue                  : '{{ $min }}',
             maximumValue                  : '{{ $max }}',
-            watchExternalChanges          : true,
-            showWarnings                  : false
-       })"
+        })
+        $watch('value', v => document.activeElement !== $el ? AutoNumeric.set($el, v) : 0)
+       "
        x-on:input="value = AutoNumeric.getNumber($el)"
         {{ $attributes->whereDoesntStartWith('wire:model')->merge(['class' => 'form-control' . ($error && $errors->has($error) ? ' is-invalid' : '')]) }}>
 
