@@ -1,8 +1,7 @@
 @props([
-    'size' => NULL,
-    'type' => NULL
+    'outline' => false,
 ])
 
-<button type="{{ $type ?? NULL }}" {{ $attributes->merge(['class' => "btn btn-primary" . ($size ? " btn-$size" : "") ]) }} {{ $attributes }}>
+<x-bs::button {{ $attributes->merge(['class' => $outline ? 'btn-outline-primary' : 'btn-primary']) }}>
     {{{ $slot }}}
-</button>
+</x-bs::button>
