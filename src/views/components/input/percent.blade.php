@@ -16,7 +16,7 @@
             digitGroupSeparator           : '{{ $groupsSeparator }}',
             decimalCharacter              : '{{ $decimalSeparator }}',
             decimalCharacterAlternative   : '{{ $groupsSeparator }}',
-            currencySymbol                : '\u202f%',
+            currencySymbol                : '%',
             currencySymbolPlacement       : '{{ $symbolPlacement }}',
             negativePositiveSignPlacement : '{{ $signPlacement }}',
             minimumValue                  : '{{ $min }}',
