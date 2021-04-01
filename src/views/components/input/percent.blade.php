@@ -24,6 +24,7 @@
             maximumValue                  : '{{ $max }}',
             allowDecimalPadding           : '{{ $decimalPadding }}',
             rawValueDivisor               : 100,
+            modifyValueOnWheel            : false
         })
         $watch('value', v => document.activeElement !== $el ? AutoNumeric.set($el, v) : 0)
        "

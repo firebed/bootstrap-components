@@ -15,6 +15,7 @@
             decimalPlaces                 : '0',
             minimumValue                  : '{{ $min }}',
             maximumValue                  : '{{ $max }}',
+            modifyValueOnWheel            : false
         })
         $watch('value', v => document.activeElement !== $el ? AutoNumeric.set($el, v) : 0)
        "
