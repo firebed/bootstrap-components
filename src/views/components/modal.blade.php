@@ -11,8 +11,9 @@
          }"
          x-init="
             new bootstrap.Modal($el, {backdrop: '{{ $backdrop }}'});
-            $watch('show', value => value ? bootstrap.Modal.getInstance($el).show() && setTimeout(autofocus, 2000) : bootstrap.Modal.getInstance($el).hide());
+            $watch('show', value => value ? bootstrap.Modal.getInstance($el).show() : bootstrap.Modal.getInstance($el).hide());
             $el.addEventListener('hidden.bs.modal', () => show = false);
+            $el.addEventListener('shown.bs.modal', () => $el.querySelector('[autofocus]').focus());
         "
          id="{{ $id ?? md5($attributes->wire('model')) }}"
          class="modal fade"
