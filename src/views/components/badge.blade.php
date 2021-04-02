@@ -15,4 +15,4 @@
     }
 @endphp
 
-<span {{ $attributes->merge(['class' => "badge $color rounded-pill"]) }} {{ $attributes }}>{{ $slot }}</span>
+<span {{ $attributes->merge(['class' => "badge $color rounded-pill"]) }}>{{ $slot }}</span>

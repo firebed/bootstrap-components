@@ -7,6 +7,6 @@
     aria-current="{{ $active ? 'true' : 'false' }}"
     aria-label="Slide {{ $slide + 1 }}"
     {{ $attributes->merge(['class' => $active ? 'active' : '']) }}
-    {{ $attributes }}>
+>
     {{ $slot }}
 </button>

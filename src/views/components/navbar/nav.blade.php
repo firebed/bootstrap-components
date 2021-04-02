@@ -1,3 +1,3 @@
-<ul {{ $attributes->merge(['class' => 'navbar-nav']) }} {{ $attributes }}>
+<ul {{ $attributes->merge(['class' => 'navbar-nav']) }}>
     {{ $slot }}
 </ul>

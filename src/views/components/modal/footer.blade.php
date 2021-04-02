@@ -1,3 +1,3 @@
-<div {{ $attributes->merge(['class' => 'modal-footer']) }} {{ $attributes }}>
+<div {{ $attributes->merge(['class' => 'modal-footer']) }}>
     {{ $slot }}
 </div>

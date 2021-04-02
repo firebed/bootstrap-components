@@ -2,7 +2,7 @@
     'error'       => NULL
 ])
 
-<input type="color" {{ $attributes->merge(['class' => ($error && $errors->has($error) ? ' is-invalid' : '')]) }} {{ $attributes }}>
+<input type="color" {{ $attributes->merge(['class' => ($error && $errors->has($error) ? ' is-invalid' : '')]) }}>
 
 @if($error)
     @error($error)

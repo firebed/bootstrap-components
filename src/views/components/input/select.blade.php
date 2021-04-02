@@ -3,7 +3,7 @@
     'error'       => NULL
 ])
 
-<select {{ $attributes->merge(['class' => 'form-select' . ($error && $errors->has($error) ? ' is-invalid' : '')]) }} {{ $attributes }}>
+<select {{ $attributes->merge(['class' => 'form-select' . ($error && $errors->has($error) ? ' is-invalid' : '')]) }}>
     @if ($placeholder)
         <option disabled value="">{{ $placeholder }}</option>
     @endif

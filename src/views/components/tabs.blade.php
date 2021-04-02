@@ -1,5 +1,5 @@
 <nav>
-    <div {{ $attributes->merge(['class' => 'nav nav-tabs']) }} {{ $attributes }} role="tablist">
+    <div {{ $attributes->merge(['class' => 'nav nav-tabs']) }} role="tablist">
         {{ $slot }}
     </div>
 </nav>

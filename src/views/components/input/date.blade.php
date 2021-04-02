@@ -11,10 +11,9 @@
         xmlns:x-on="http://www.w3.org/1999/xhtml" xmlns:x-bind="http://www.w3.org/1999/xhtml">
     <span class="input-group-text text-secondary bg-light"><em class="fa fa-calendar"></em></span>
     <input
-            {{ $attributes->whereDoesntStartWith('wire:model') }}
+            {{ $attributes->whereDoesntStartWith('wire:model')->merge(['class' => 'form-control']) }}
             x-ref="input"
             x-bind:value="value"
-            {{ $attributes->merge(['class' => 'form-control']) }}
             autocomplete="off"
     />
 </div>

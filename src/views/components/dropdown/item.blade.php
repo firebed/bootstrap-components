@@ -6,8 +6,8 @@
 
 <li>
     @if($type === 'button')
-        <button {{ $attributes->merge(['class' => 'dropdown-item']) }} type="button" @if($disabled) disabled @endif {{ $attributes }}>{{ $slot }}</button>
+        <button {{ $attributes->merge(['class' => 'dropdown-item']) }} type="button" @if($disabled) disabled @endif>{{ $slot }}</button>
     @else
-        <a {{ $attributes->merge(['class' => 'dropdown-item' . ($disabled ? ' disabled' : '')]) }} href="{{ $href }}" {{ $attributes }}>{{ $slot }}</a>
+        <a {{ $attributes->merge(['class' => 'dropdown-item' . ($disabled ? ' disabled' : '')]) }} href="{{ $href }}">{{ $slot }}</a>
     @endif
 </li>

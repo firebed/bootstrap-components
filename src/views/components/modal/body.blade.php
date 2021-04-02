@@ -1,3 +1,3 @@
-<div {{ $attributes->merge(['class' => 'modal-body']) }} {{ $attributes }}>
+<div {{ $attributes->merge(['class' => 'modal-body']) }}>
     {{ $slot }}
 </div>

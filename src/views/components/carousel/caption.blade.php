@@ -1,3 +1,3 @@
-<div {{ $attributes->merge(['class' => "carousel-caption p-3"]) }} {{ $attributes }}>
+<div {{ $attributes->merge(['class' => "carousel-caption p-3"]) }}>
     {{ $slot }}
 </div>

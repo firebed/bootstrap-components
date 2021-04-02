@@ -1,1 +1,1 @@
-<em {{ $attributes->merge(['class' => 'fa fa-spinner fa-spin']) }} {{ $attributes }}></em>
+<em {{ $attributes->merge(['class' => 'fa fa-spinner fa-spin']) }}></em>

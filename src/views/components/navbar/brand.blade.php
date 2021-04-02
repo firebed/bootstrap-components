@@ -1,1 +1,1 @@
-<a {{ $attributes->merge(['class' => 'navbar-brand']) }} {{ $attributes }}>{{ $slot }}</a>
+<a {{ $attributes->merge(['class' => 'navbar-brand']) }}>{{ $slot }}</a>

@@ -2,7 +2,7 @@
     'error'       => NULL
 ])
 
-<input type="search" {{ $attributes->merge(['class' => 'form-control']) }} {{ $attributes }}>
+<input type="search" {{ $attributes->merge(['class' => 'form-control']) }}>
 
 @if($error)
     @error($error)
