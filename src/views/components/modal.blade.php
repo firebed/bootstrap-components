@@ -3,7 +3,7 @@
     'backdrop' => 'true'
 ])
 
-@if($attributes->offsetExists('wire:model'))
+@if($attributes->wire('model')->value)
     <div wire:ignore.self
          x-data="{
             show: @entangle($attributes->wire('model')),
