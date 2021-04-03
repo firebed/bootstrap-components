@@ -1,5 +1,5 @@
 @props([
-    'event' => 'notify'
+    'event' => 'notification-dialog'
 ])
 
 <x-bs::modal
