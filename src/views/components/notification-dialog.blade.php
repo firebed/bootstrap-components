@@ -1,12 +1,3 @@
-{{--
--- Important note:
---
--- This notification dialog should only be used once on a page.
--- Make sure to add x-on:{custom-event}='message = $event.detail; show = true;'
--- when invoking this component.
---
---}}
-
 @props([
     'event' => 'notify'
 ])
@@ -17,8 +8,8 @@
         new bootstrap.Modal($el);
         $watch('show', value => value ? bootstrap.Modal.getInstance($el).show() : bootstrap.Modal.getInstance($el).hide());
         $el.addEventListener('hidden.bs.modal', () => show = false);
+        window.addEventListener('{{ $event }}', notification => { message = notification.detail; show = true; });
     "
-    x-on:{{ $event }}.window="message = $event.detail; show = true"
 >
     <x-bs::modal.body>
         <div class="d-grid gap-3 px-4">
