@@ -1,3 +1,3 @@
 <button type="button" {{ $attributes->merge(['class' => 'btn btn-haze']) }} data-bs-dismiss="modal">
-    {{ __("Close") }}
+    {{ $slot ?? __("Close") }}
 </button>
