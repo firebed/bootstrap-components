@@ -1,7 +1,7 @@
 {
   "name": "firebed/bootstrap-components",
   "description": "Boostrap components for laravel framework",
-  "license": "proprietary",
+  "license": "MIT",
   "authors": [
     {
       "name": "okang",
@@ -21,9 +21,6 @@
     }
   },
   "extra": {
-    "branch-alias": {
-      "dev-master": "1.0-dev"
-    },
     "laravel": {
       "providers": [
         "Firebed\\BootstrapServiceProvider"
