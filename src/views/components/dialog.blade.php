@@ -5,6 +5,7 @@
         $watch('show', value => value ? bootstrap.Modal.getInstance($el).show() : bootstrap.Modal.getInstance($el).hide());
         $el.addEventListener('hidden.bs.modal', () => show = false);
     "
+    {{ $attributes }}
 >
     <x-bs::modal.body>
         <div class="d-grid gap-3 px-4">
