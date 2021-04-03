@@ -1,7 +1,6 @@
 {
   "name": "firebed/bootstrap-components",
   "description": "Boostrap components for laravel framework",
-  "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
@@ -27,5 +26,7 @@
         "Firebed\\BootstrapServiceProvider"
       ]
     }
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
