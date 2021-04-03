@@ -3,7 +3,7 @@
     'backdrop' => 'true'
 ])
 
-@if($attributes->wire('model'))
+@if($attributes->offsetExists('wire:model'))
     <div wire:ignore.self
          x-data="{
             show: @entangle($attributes->wire('model')),
@@ -26,11 +26,11 @@
         </div>
     </div>
 @else
-    <div id="{{ $id ?? substr(md5(mt_rand()), 0, 7) }}" class="modal fade" tabindex="-1">
+    <div id="{{ $id ?? substr(md5(mt_rand()), 0, 7) }}" class="modal fade" tabindex="-1" {{ $attributes }}>
         <div class="modal-dialog shadow @isset($size) modal-{{ $size }} @endisset">
             <div class="modal-content">
                 {{ $slot }}
             </div>
         </div>
     </div>
-@endif
+@endempty
