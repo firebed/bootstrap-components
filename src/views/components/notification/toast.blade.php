@@ -49,7 +49,7 @@
                 <div class="body d-flex p-3 align-items-start">
                     <em class="fa fa-2x"></em>
                     <div class="flex-grow-1 d-grid gap-2 ps-3">
-                        <div class="title fs-5"></div>
+                        <div class="title" style="font-size: 1.1rem"></div>
                         <div class="content text-secondary"></div>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
