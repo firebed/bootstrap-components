@@ -1,22 +1,53 @@
-<div
-    x-data="{
-        messages: [],
-        remove(message) {
-            this.messages.splice(this.messages.indexOf(message), 1)
-        },
-    }"
-    @notify.window="let message = $event.detail; messages.push(message); setTimeout(() => { remove(message) }, 2500)"
-    aria-live="polite" aria-atomic="true" class="position-relative" style="z-index: 9999"
->
-    <div class="toast-container position-fixed top-0 end-0 p-3">
-        <template x-for="(message, messageIndex) in messages" :key="messageIndex" hidden>
+@props([
+    'event' => 'toast-notification'
+])
+
+<div aria-live="polite" aria-atomic="true" class="position-relative" style="z-index: 9999">
+    <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3"
+         x-data
+         x-init="
+            window.addEventListener('{{ $event }}', notification => {
+                let message = notification.detail;
+                let toast = $el.querySelector('template').content.firstElementChild.cloneNode(true);
+
+                if (message.type === 'success') {
+                    toast.querySelector('em').classList.add('fa-check-circle', 'text-success');
+                }
+                else if (message.type === 'info') {
+                    toast.querySelector('em').classList.add('fa-info-circle', 'text-primary');
+                }
+                else if (message.type === 'warning') {
+                    toast.querySelector('em').classList.add('fa-exclamation-circle', 'text-warning');
+                }
+                else if (message.type === 'error') {
+                    toast.querySelector('em').classList.add('fa-times-circle', 'text-danger');
+                }
+
+                toast.querySelector('.title').innerText = message.title;
+                toast.querySelector('.content').innerText = message.content;
+
+                $el.appendChild(toast);
+
+                new bootstrap.Toast(toast, { autohide: message.autohide }).show();
+                toast.addEventListener('hidden.bs.toast', () => {
+                    bootstrap.Toast.getInstance(toast).dispose();
+                    toast.remove();
+                });
+            });
+        "
+    >
+        <template hidden>
             <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="toast-header">
-                    {{--                    <img src="..." class="rounded me-2" alt="...">--}}
-                    <strong x-text="message.title" class="me-auto"></strong>
-                    <button @click="remove(message)" type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                <div class="d-flex p-3 align-items-start">
+                    <em class="fa fa-2x"></em>
+                    <div class="d-grid gap-2 ms-3">
+                        <div class="d-flex justify-content-between">
+                            <strong class="title"></strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="content"></div>
+                    </div>
                 </div>
-                <div x-text="message.content" class="toast-body"></div>
             </div>
         </template>
     </div>
