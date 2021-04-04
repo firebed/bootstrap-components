@@ -28,12 +28,15 @@
                     toast.querySelector('.content').innerText = message.content;
                 } else {
                     toast.querySelector('.content').remove();
-                    toast.querySelector('.title').classList.add('fs-5');
+                    toast.querySelector('.body').classList.replace('align-items-start', 'align-items-center');
                 }
 
                 $el.appendChild(toast);
 
-                new bootstrap.Toast(toast, { autohide: message.autohide }).show();
+                new bootstrap.Toast(toast, {
+                    autohide: message.autohide,
+                    delay: message.delay ? message.delay : 5000
+                }).show();
                 toast.addEventListener('hidden.bs.toast', () => {
                     bootstrap.Toast.getInstance(toast).dispose();
                     toast.remove();
@@ -41,17 +44,15 @@
             });
         "
     >
-        <template hidden>
+        <template class="full" hidden>
             <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex p-3 align-items-start">
+                <div class="body d-flex p-3 align-items-start">
                     <em class="fa fa-2x"></em>
-                    <div class="flex-grow-1 d-grid gap-2 ms-3">
-                        <div class="d-flex justify-content-between">
-                            <strong class="title"></strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                        <div class="content"></div>
+                    <div class="flex-grow-1 d-grid gap-2 ps-3">
+                        <div class="title fs-5"></div>
+                        <div class="content text-secondary"></div>
                     </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
             </div>
         </template>
