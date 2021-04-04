@@ -23,10 +23,9 @@
             minimumValue                  : '0',
             modifyValueOnWheel            : false
         })
-        $watch('value', v => document.activeElement !== $el ? AutoNumeric.set($el, v) : 0)
-       "
-       x-on:input="value = AutoNumeric.getNumber($el)"
-        {{ $attributes->whereDoesntStartWith('wire:model')->merge(['class' => 'form-control' . ($error && $errors->has($error) ? ' is-invalid' : '')]) }}>
+        $watch('value', v => document.activeElement !== $el ? AutoNumeric.set($el, v) : 0)"
+        x-on:input="value = AutoNumeric.getNumericString($el)"
+        {{ $attributes->whereDoesntStartWith('wire:model')->class('form-control' . ($error && $errors->has($error) ? ' is-invalid' : '')) }}>
 
 @if($error)
     @error($error)
