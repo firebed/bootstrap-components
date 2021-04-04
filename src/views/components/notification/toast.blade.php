@@ -40,7 +40,7 @@
             <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="d-flex p-3 align-items-start">
                     <em class="fa fa-2x"></em>
-                    <div class="d-grid gap-2 ms-3">
+                    <div class="flex-grow-1 d-grid gap-2 ms-3">
                         <div class="d-flex justify-content-between">
                             <strong class="title"></strong>
                             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
