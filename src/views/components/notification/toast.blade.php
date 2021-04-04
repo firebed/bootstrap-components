@@ -24,7 +24,12 @@
                 }
 
                 toast.querySelector('.title').innerText = message.title;
-                toast.querySelector('.content').innerText = message.content;
+                if (message.content.length > 0) {
+                    toast.querySelector('.content').innerText = message.content;
+                } else {
+                    toast.querySelector('.content').remove();
+                    toast.querySelector('.title').classList.add('fs-5');
+                }
 
                 $el.appendChild(toast);
 
