@@ -34,7 +34,7 @@
         "
     >
         <template hidden>
-            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast bg-gray-100" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="body d-flex p-3 align-items-start">
                     <div class="success text-success d-none"><x-bs::icons.check-circle width="24" height="24"/></div>
                     <div class="info text-info d-none"><x-bs::icons.info-circle width="24" height="24"/></div>
