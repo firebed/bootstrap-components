@@ -7,7 +7,7 @@
     @unless ($sortable)
         {{ $slot }}
     @else
-        <a href="#" class="d-flex align-items-center shadow-none text-decoration-none text-dark group">
+        <a href="#" class="d-flex align-items-center shadow-none text-decoration-none text-dark group @if(Str::contains('text-end', $attributes->get('class'))) justify-content-end @endif">
             <span class="me-2">{{ $slot }}</span>
             @if($direction === 'asc')
                 <span class="text-secondary">
