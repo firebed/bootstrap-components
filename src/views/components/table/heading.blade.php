@@ -3,7 +3,7 @@
     'direction' => null,
 ])
 
-<td @if($sortable) {{ $attributes->merge(['class' => $sortable ? 'sortable' : '']) }} @endif>
+<td {{ $attributes->class($sortable ? 'sortable' : '') }}>
     @unless ($sortable)
         {{ $slot }}
     @else
