@@ -12,7 +12,9 @@
             @if ($direction === 'desc')
                 <x-bs::icons.chevron-down/>
             @else
-                <x-bs::icons.chevron-up/>
+                <span class="opacity-0 opacity-hover-1">
+                    <x-bs::icons.chevron-up/>
+                </span>
             @endif
         </a>
     @endunless
