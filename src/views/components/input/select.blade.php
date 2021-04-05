@@ -1,13 +1,8 @@
 @props([
-    'placeholder' => NULL,
-    'error'       => NULL
+    'error' => NULL
 ])
 
-<select {{ $attributes->merge(['class' => 'form-select' . ($error && $errors->has($error) ? ' is-invalid' : '')]) }}>
-    @if ($placeholder)
-        <option disabled value="">{{ $placeholder }}</option>
-    @endif
-
+<select {{ $attributes->class(['form-select', 'is-invalid' => $error && $errors->has($error)]) }}>
     {{ $slot }}
 </select>
 
