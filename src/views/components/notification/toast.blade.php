@@ -10,7 +10,7 @@
                 let message = notification.detail;
                 let toast = $el.querySelector('template').content.firstElementChild.cloneNode(true);
 
-                toast.querySelector('div.\' + message.type + '\'').classList.remove('d-none');
+                toast.querySelector('div.' + message.type).classList.remove('d-none');
 
                 toast.querySelector('.title').innerText = message.title;
                 if (message.content.length > 0) {
@@ -36,16 +36,16 @@
         <template hidden>
             <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="body d-flex p-3 align-items-start">
-                    <div class="success d-none fs-5"><x-bs::icons.check-circle/></div>
-                    <div class="info d-none fs-5"><x-bs::icons.info-circle/></div>
-                    <div class="warning d-none fs-5"><x-bs::icons.exclamation-circle/></div>
-                    <div class="error d-none fs-5"><x-bs::icons.x-circle/></div>
+                    <div class="success text-success d-none"><x-bs::icons.check-circle width="24" height="24"/></div>
+                    <div class="info text-info d-none"><x-bs::icons.info-circle width="24" height="24"/></div>
+                    <div class="warning text-warning d-none"><x-bs::icons.exclamation-circle width="24" height="24"/></div>
+                    <div class="error text-danger d-none"><x-bs::icons.x-circle width="24" height="24"/></div>
 
                     <div class="flex-grow-1 d-grid gap-2 ps-3">
                         <div class="title" style="font-size: 1.1rem"></div>
                         <div class="content text-secondary"></div>
                     </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
             </div>
         </template>
