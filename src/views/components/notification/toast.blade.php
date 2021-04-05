@@ -10,18 +10,7 @@
                 let message = notification.detail;
                 let toast = $el.querySelector('template').content.firstElementChild.cloneNode(true);
 
-                if (message.type === 'success') {
-                    toast.querySelector('em').classList.add('fa-check-circle', 'text-success');
-                }
-                else if (message.type === 'info') {
-                    toast.querySelector('em').classList.add('fa-info-circle', 'text-primary');
-                }
-                else if (message.type === 'warning') {
-                    toast.querySelector('em').classList.add('fa-exclamation-circle', 'text-warning');
-                }
-                else if (message.type === 'error') {
-                    toast.querySelector('em').classList.add('fa-times-circle', 'text-danger');
-                }
+                toast.querySelector('div.\' + message.type + '\'').classList.remove('d-none');
 
                 toast.querySelector('.title').innerText = message.title;
                 if (message.content.length > 0) {
@@ -44,10 +33,14 @@
             });
         "
     >
-        <template class="full" hidden>
+        <template hidden>
             <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="body d-flex p-3 align-items-start">
-                    <em class="fa fa-2x"></em>
+                    <div class="success d-none fs-5"><x-bs::icons.check-circle/></div>
+                    <div class="info d-none fs-5"><x-bs::icons.info-circle/></div>
+                    <div class="warning d-none fs-5"><x-bs::icons.exclamation-circle/></div>
+                    <div class="error d-none fs-5"><x-bs::icons.x-circle/></div>
+
                     <div class="flex-grow-1 d-grid gap-2 ps-3">
                         <div class="title" style="font-size: 1.1rem"></div>
                         <div class="content text-secondary"></div>
