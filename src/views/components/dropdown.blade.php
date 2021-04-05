@@ -1,3 +1,3 @@
-<div {{ $attributes->merge(['class' => 'dropdown']) }}>
+<div {{ $attributes->class('dropdown') }}>
     {{ $slot }}
 </div>

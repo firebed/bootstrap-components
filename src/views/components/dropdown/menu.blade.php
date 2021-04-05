@@ -4,6 +4,6 @@
     'button'
 ])
 
-<ul {{ $attributes->merge(['class' => 'dropdown-menu' . ($theme ? " dropdown-menu-$theme" : '') . ($alignment === 'right' ? ' dropdown-menu-end' : '')]) }} aria-labelledby="{{ $button }}">
+<ul {{ $attributes->class(['dropdown-menu', "dropdown-menu-$theme" => $theme, 'dropdown-menu-end' => $alignment === 'right']) }} aria-labelledby="{{ $button }}">
     {{ $slot }}
 </ul>

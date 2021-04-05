@@ -2,6 +2,6 @@
     'outline' => false,
 ])
 
-<x-bs::button {{ $attributes->merge(['class' => ($outline ? 'btn-outline-white' : 'btn-white')]) }}>
+<x-bs::button {{ $attributes->class($outline ? 'btn-outline-white' : 'btn-white') }}>
     {{{ $slot }}}
 </x-bs::button>

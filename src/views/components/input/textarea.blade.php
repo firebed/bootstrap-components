@@ -1,8 +1,8 @@
 @props([
-    'error'       => NULL
+    'error' => NULL
 ])
 
-<textarea {{ $attributes->merge(['class' => 'form-control' . ($error && $errors->has($error) ? ' is-invalid' : '')]) }}>{{ $slot }}</textarea>
+<textarea {{ $attributes->class(['form-control', 'is-invalid' => $error && $errors->has($error)]) }}>{{ $slot }}</textarea>
 
 @if($error)
     @error($error)

@@ -1,3 +1,3 @@
-<div {{ $attributes->merge(['class' => 'carousel slide']) }} data-bs-ride="carousel">
+<div {{ $attributes->class('carousel slide') }} data-bs-ride="carousel">
     {{ $slot }}
 </div>

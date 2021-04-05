@@ -6,7 +6,7 @@
     data-bs-slide-to="{{ $slide }}"
     aria-current="{{ $active ? 'true' : 'false' }}"
     aria-label="Slide {{ $slide + 1 }}"
-    {{ $attributes->merge(['class' => $active ? 'active' : '']) }}
+    {{ $attributes->class(['active' => $active]) }}
 >
     {{ $slot }}
 </button>

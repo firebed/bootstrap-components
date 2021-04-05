@@ -2,6 +2,6 @@
     'active' => FALSE
 ])
 
-<div class="tab-pane @if($active) show active @endif" {{ $attributes }} role="tabpanel" aria-labelledby="{{ $attributes->get('id') }}">
+<div {{ $attributes->class(['tab-pane', 'show active' => $active]) }} role="tabpanel" aria-labelledby="{{ $attributes->get('id') }}">
     {{ $slot }}
 </div>

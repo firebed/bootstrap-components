@@ -19,7 +19,7 @@
         })
         $watch('value', v => document.activeElement !== $el ? AutoNumeric.set($el, v) : 0)"
         x-on:input="value = AutoNumeric.getNumericString($el)"
-        {{ $attributes->whereDoesntStartWith('wire:model')->class('form-control' . ($error && $errors->has($error) ? ' is-invalid' : '')) }}>
+        {{ $attributes->whereDoesntStartWith('wire:model')->class(['form-control', 'is-invalid' => $error && $errors->has($error)]) }}>
 
 @if($error)
     @error($error)

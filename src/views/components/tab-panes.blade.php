@@ -1,3 +1,3 @@
-<div {{ $attributes->merge(['class' => 'tab-content']) }}>
+<div {{ $attributes->class('tab-content') }}>
     {{ $slot }}
 </div>

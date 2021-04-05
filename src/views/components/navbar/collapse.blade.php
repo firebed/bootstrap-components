@@ -1,3 +1,3 @@
-<div {{ $attributes->merge(['class' => 'collapse navbar-collapse']) }}>
+<div {{ $attributes->class('collapse navbar-collapse') }}>
     {{ $slot }}
 </div>

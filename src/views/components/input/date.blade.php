@@ -1,6 +1,6 @@
 @props([
-'error' => NULL,
-'format' => 'DD/MM/YYYY'
+    'error' => NULL,
+    'format' => 'DD/MM/YYYY'
 ])
 
 <div
@@ -11,9 +11,15 @@
         xmlns:x-on="http://www.w3.org/1999/xhtml" xmlns:x-bind="http://www.w3.org/1999/xhtml">
     <span class="input-group-text text-secondary bg-light"><em class="fa fa-calendar"></em></span>
     <input
-            {{ $attributes->whereDoesntStartWith('wire:model')->merge(['class' => 'form-control']) }}
+            {{ $attributes->whereDoesntStartWith('wire:model')->class('form-control') }}
             x-ref="input"
             x-bind:value="value"
             autocomplete="off"
     />
 </div>
+
+@if($error)
+    @error($error)
+    <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+@endif

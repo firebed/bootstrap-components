@@ -1,8 +1,8 @@
 @props([
-    'error'       => NULL
+    'error' => NULL
 ])
 
-<input type="color" {{ $attributes->merge(['class' => ($error && $errors->has($error) ? ' is-invalid' : '')]) }}>
+<input type="color" {{ $attributes->class(['form-control', 'form-control-color', 'is-invalid' => $error && $errors->has($error)]) }}>
 
 @if($error)
     @error($error)

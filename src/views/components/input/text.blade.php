@@ -2,7 +2,7 @@
     'error' => NULL
 ])
 
-<input type="text" {{ $attributes->merge(['class' => 'form-control' . ($error && $errors->has($error) ? ' is-invalid' : '')]) }}>
+<input type="text" {{ $attributes->class(['form-control', 'is-invalid' => $error && $errors->has($error)]) }}>
 
 @if($error)
     @error($error)

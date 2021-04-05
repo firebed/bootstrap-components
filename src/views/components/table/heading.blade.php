@@ -3,7 +3,7 @@
     'direction' => null,
 ])
 
-<td {{ $attributes->class([$sortable ? 'sortable' : '']) }}>
+<td {{ $attributes->class(['sortable' => $sortable]) }}>
     @unless ($sortable)
         {{ $slot }}
     @else

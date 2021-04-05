@@ -2,6 +2,6 @@
     'outline' => false,
 ])
 
-<x-bs::button {{ $attributes->merge(['class' => $outline ? 'btn-haze-danger' : 'btn-haze']) }}>
+<x-bs::button {{ $attributes->class($outline ? 'btn-outline-haze' : 'btn-haze') }}>
     {{{ $slot }}}
 </x-bs::button>

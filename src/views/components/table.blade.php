@@ -1,4 +1,4 @@
-<table {{ $attributes->merge(['class' => 'table mb-0']) }}>
+<table {{ $attributes->class('table mb-0') }}>
     <thead>
     <tr>
         {{ $head }}

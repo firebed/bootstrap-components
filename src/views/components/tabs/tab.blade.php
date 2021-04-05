@@ -3,8 +3,7 @@
     'target' => ''
 ])
 
-<button class="nav-link @if($active) active @endif"
-        {{ $attributes }}
+<button {{ $attributes->class(['nav-link', 'active' => $active]) }}
         data-bs-toggle="tab"
         data-bs-target="#{{ $target }}"
         type="button"

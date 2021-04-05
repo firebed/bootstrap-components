@@ -1,4 +1,5 @@
 @props([
+    'error' => NULL,
     'allowDeselect' => false,
 ])
 
@@ -7,16 +8,16 @@
      x-init="new SlimSelect({
         select: $refs.select,
         showSearch: false,
-        addToBody: true,
-        onChange: () => {
-            $dispatch('change', select.selected());
-        }
+        allowDeselect: {{ $allowDeselect ? 'true' : 'false' }},
      })"
 >
     <select hidden x-ref="select" {{ $attributes }}>
-        @if($allowDeselect)
-            <option data-placeholder="true"></option>
-        @endif
         {{ $slot }}
     </select>
 </div>
+
+@if($error)
+    @error($error)
+    <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+@endif

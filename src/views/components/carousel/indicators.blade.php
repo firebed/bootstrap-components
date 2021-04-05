@@ -1,3 +1,3 @@
-<div {{ $attributes->merge(['class' => 'carousel-indicators']) }}>
+<div {{ $attributes->class('carousel-indicators') }}>
     {{ $slot }}
 </div>

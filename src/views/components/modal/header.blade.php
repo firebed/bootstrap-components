@@ -1,4 +1,4 @@
 <div class="modal-header">
-    <h5 class="mb-0">{{ $slot }}</h5>
+    <div class="fs-5">{{ $slot }}</div>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
