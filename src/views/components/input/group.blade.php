@@ -8,7 +8,7 @@
 <div {{ $attributes }}>
     @if($inline)
         <div class="row align-items-baseline">
-            <label for="{{ $for }}" class="{{ $labelCol }}">{{ $label }}</label>
+            <label for="{{ $for }}" class="col-{{ $labelCol }}">{{ $label }}</label>
             <div class="col">
                 {{ $slot }}
             </div>
