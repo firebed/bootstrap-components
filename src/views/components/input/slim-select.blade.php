@@ -19,7 +19,7 @@
             }
         }
      })
-     $refs.select.slim.set(values);
+     $refs.select.slim.set(values)
     "
 >
     <select hidden x-ref="select" {{ $attributes->whereDoesntStartWith('wire:model') }}>

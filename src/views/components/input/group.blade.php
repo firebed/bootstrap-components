@@ -1,13 +1,14 @@
 @props([
     'for',
     'label',
+    'labelCol' => 4,
     'inline' => false
 ])
 
 <div {{ $attributes }}>
     @if($inline)
         <div class="row align-items-baseline">
-            <label for="{{ $for }}" class="col-4">{{ $label }}</label>
+            <label for="{{ $for }}" class="{{ $labelCol }}">{{ $label }}</label>
             <div class="col">
                 {{ $slot }}
             </div>
