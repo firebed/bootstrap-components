@@ -12,9 +12,10 @@
         toolbar: '{{ $toolbar }}',
         setup: function (editor) {
             editor.on('input', function (e) {
-                value = editor.getContent();
+                value = editor.getContent()
             });
-            $watch('value', v => !editor.hasFocus() && editor.setContent(v));
+            editor.setContent(value)
+            $watch('value', v => !editor.hasFocus() && editor.setContent(v))
         }
     });"
     wire:ignore
