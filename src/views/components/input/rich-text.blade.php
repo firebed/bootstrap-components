@@ -11,7 +11,8 @@
         menubar: '{{ $menubar }}',
         toolbar: '{{ $toolbar }}',
         setup: function (editor) {
-            editor.on('input', e => value = editor.getContent())
+            //editor.on('input', e => value = editor.getContent())
+            editor.on('change', e => value = editor.getContent())
             editor.on('init', e => editor.setContent(value))
             $watch('value', v => !editor.hasFocus() && editor.setContent(v))
 
