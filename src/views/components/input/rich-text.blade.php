@@ -15,7 +15,6 @@
             editor.on('change', e => value = editor.getContent())
             editor.on('init', e => editor.setContent(value))
             $watch('value', v => !editor.hasFocus() && editor.setContent(v))
-
         }
     });"
     wire:ignore
