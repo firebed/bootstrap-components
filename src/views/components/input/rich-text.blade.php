@@ -11,11 +11,10 @@
         menubar: '{{ $menubar }}',
         toolbar: '{{ $toolbar }}',
         setup: function (editor) {
-            editor.on('input', function (e) {
-                value = editor.getContent()
-            });
-            editor.setContent(value)
+            editor.on('input', e => value = editor.getContent())
+            editor.on('init', e => editor.setContent(value))
             $watch('value', v => !editor.hasFocus() && editor.setContent(v))
+
         }
     });"
     wire:ignore
