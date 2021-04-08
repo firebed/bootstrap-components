@@ -10,13 +10,8 @@
         showSearch: false,
         allowDeselect: {{ $allowDeselect ? 'true' : 'false' }},
         onChange: () => {
-            const selected = $refs.select.slim.selected()
-            for(let i=0; i<selected.length; i++) {
-                if (selected[i] !== values[i]) {
-                    values = $refs.select.slim.selected()
-                    break
-                }
-            }
+            selected = $refs.select.slim.selected()
+            values = selected ? selected : ''
         }
      })
      $refs.select.slim.set(values)

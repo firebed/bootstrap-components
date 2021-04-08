@@ -7,7 +7,7 @@ namespace Firebed\Livewire\Traits;
 trait SendsToastNotifications
 {
     public static string $TOAST_NOTIFICATION  = 'toast-notification';
-    public static int $DELAY = 4000;
+    public static int $DELAY = 2500;
 
     public function showSuccessToast(string $title, string $content = "", bool $autohide = true, int $delay = NULL): void
     {
