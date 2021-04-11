@@ -2,7 +2,7 @@
     'id'
 ])
 
-<input type="text" {{ $attributes->class('form-control') }} list="{{ $id }}-options" id="{{ $id }}">
+<x-bs::input {{ $attributes }} list="{{ $id }}-options" id="{{ $id }}"/>
 <datalist id="{{ $id }}-options">
     {{ $slot }}
 </datalist>
