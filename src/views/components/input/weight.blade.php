@@ -23,7 +23,7 @@
             minimumValue                  : '0',
             modifyValueOnWheel            : false
         })
-        $watch('value', v => document.activeElement !== $el ? AutoNumeric.set($el, v) : 0)"
+        $watch('value', v => document.activeElement !== $el ? $nextTick(() => AutoNumeric.set($el, v)) : 0)"
         x-on:input="value = AutoNumeric.getNumericString($el)"
         {{ $attributes->whereDoesntStartWith('wire:model')->class(['form-control', 'is-invalid' => $error && $errors->has($error)]) }}>
 
