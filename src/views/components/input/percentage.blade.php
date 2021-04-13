@@ -6,7 +6,8 @@
     'decimalSeparator' => config('intl.decimal_separator'),
     'symbolPlacement' => config('intl.currency_placement'),
     'signPlacement' => config('intl.sign_placement'),
-    'decimalPadding' => 'floats'
+    'decimalPadding' => 'floats',
+    'emptyInputBehavior' => 'null'
 ])
 
 <input type="text"
@@ -24,7 +25,8 @@
             maximumValue                  : '{{ $max }}',
             allowDecimalPadding           : '{{ $decimalPadding }}',
             rawValueDivisor               : 100,
-            modifyValueOnWheel            : false
+            modifyValueOnWheel            : false,
+            emptyInputBehavior            : '{{ $emptyInputBehavior }}'
         })
         $watch('value', v => document.activeElement !== $el ? $nextTick(() => AutoNumeric.set($el, v)) : 0)"
         x-on:input="value = AutoNumeric.getNumericString($el)"

@@ -6,7 +6,8 @@
     'groupsSeparator' => config('intl.group_separator'),
     'decimalSeparator' => config('intl.decimal_separator'),
     'currencyPlacement' => config('intl.currency_placement'),
-    'signPlacement' => config('intl.sign_placement')
+    'signPlacement' => config('intl.sign_placement'),
+    'emptyInputBehavior' => 'null'
 ])
 
 <input type="text"
@@ -22,7 +23,8 @@
             negativePositiveSignPlacement : '{{ $signPlacement }}',
             minimumValue                  : '{{ $min }}',
             maximumValue                  : '{{ $max }}',
-            modifyValueOnWheel            : false
+            modifyValueOnWheel            : false,
+            emptyInputBehavior            : '{{ $emptyInputBehavior }}'
         })
         $watch('value', v => document.activeElement !== $el ? $nextTick(() => AutoNumeric.set($el, v)) : 0)"
         x-on:input="value = AutoNumeric.getNumericString($el)"

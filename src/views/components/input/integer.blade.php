@@ -2,7 +2,8 @@
     'error' => NULL,
     'min' => '-10000000000000',
     'max' => '10000000000000',
-    'signPlacement' => config('intl.sign_placement')
+    'signPlacement' => config('intl.sign_placement'),
+    'emptyInputBehavior' => 'null'
 ])
 
 <input type="text"
@@ -15,10 +16,11 @@
             decimalPlaces                 : '0',
             minimumValue                  : '{{ $min }}',
             maximumValue                  : '{{ $max }}',
-            modifyValueOnWheel            : false
+            modifyValueOnWheel            : false,
+            emptyInputBehavior            : '{{ $emptyInputBehavior }}'
         })
         $watch('value', v => document.activeElement !== $el ? $nextTick(() => AutoNumeric.set($el, v)) : 0)"
-        x-on:input="value = AutoNumeric.getNumericString($el)"
+       x-on:input="value = AutoNumeric.getNumericString($el)"
         {{ $attributes->whereDoesntStartWith('wire:model')->class(['form-control', 'is-invalid' => $error && $errors->has($error)]) }}>
 
 @if($error)
