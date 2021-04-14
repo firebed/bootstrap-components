@@ -1,5 +1,6 @@
 @props([
     'menubar' => '',
+    'plugins' => '',
     'toolbar' => 'fontsizeselect | bold italic underline | forecolor | alignleft aligncenter alignright alignjustify | outdent indent',
     'error'   => null
 ])
@@ -8,6 +9,7 @@
     x-data="{ value: @entangle($attributes->wire('model')) }"
     x-init="tinymce.init({
         target: $refs.input,
+        plugins: [{{ $plugins }}],
         menubar: '{{ $menubar }}',
         toolbar: '{{ $toolbar }}',
         setup: function (editor) {
