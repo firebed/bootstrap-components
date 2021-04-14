@@ -6,8 +6,8 @@
 ])
 
 <div
-        x-data="{ value: @entangle($attributes->wire('model')) }"
-        x-init="tinymce.init({
+    x-data="{ value: @entangle($attributes->wire('model')) }"
+    x-init="tinymce.init({
         target: $refs.input,
         plugins: ['{{ $plugins }}'],
         menubar: '{{ $menubar }}',
@@ -18,8 +18,8 @@
             editor.on('init', e => editor.setContent(value))
             $watch('value', v => !editor.hasFocus() && editor.setContent(v))
         }
-    });"
-        wire:ignore
+    })"
+    wire:ignore
 >
     <textarea x-ref="input" {{ $attributes->whereDoesntStartWith('wire:model')->class('form-control opacity-0') }}></textarea>
 </div>

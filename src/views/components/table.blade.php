@@ -14,19 +14,5 @@
     'table-bordered' => $bordered,
     'table-borderless' => $borderless,
 ]) }}>
-    <thead>
-    <tr>
-        {{ $head }}
-    </tr>
-    </thead>
-
-    <tbody>
     {{ $slot }}
-    </tbody>
-
-    @isset($foot)
-        <tr>
-            {{ $foot }}
-        </tr>
-    @endisset
 </table>
