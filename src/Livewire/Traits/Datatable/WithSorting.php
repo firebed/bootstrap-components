@@ -4,6 +4,12 @@
 namespace Firebed\Livewire\Traits\Datatable;
 
 
+/**
+ * Trait WithSorting
+ * @package Firebed\Livewire\Traits\Datatable
+ *
+ * @property ?array queryString
+ */
 trait WithSorting
 {
     public string $sortField     = '';
@@ -18,5 +24,17 @@ trait WithSorting
         }
 
         $this->sortField = $field;
+    }
+
+    public function getQueryString()
+    {
+        $queryString = method_exists($this, 'queryString')
+            ? $this->queryString()
+            : $this->queryString;
+
+        return array_merge([
+            'sortField'     => ['except' => ''],
+            'sortDirection' => ['except' => 'asc']
+        ], $queryString);
     }
 }
