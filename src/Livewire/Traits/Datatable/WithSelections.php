@@ -14,7 +14,7 @@ trait WithSelections
     public function updatedSelectAll($selectAll): void
     {
         $this->selected = $selectAll
-            ? $this->getModels()->pluck('id')->map(fn($id) => (string)$id)
+            ? $this->getModels()->pluck('id')->map(fn($id) => (string)$id)->all()
             : [];
     }
 
