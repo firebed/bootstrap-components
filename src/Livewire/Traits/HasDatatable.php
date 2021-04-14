@@ -18,5 +18,15 @@ trait HasDatatable
             : [];
     }
 
+    protected function doesntHaveSelections(): bool
+    {
+        return !$this->hasSelections();
+    }
+
+    protected function hasSelections(): bool
+    {
+        return filled($this->selected);
+    }
+
     abstract protected function getModels(): Collection;
 }
