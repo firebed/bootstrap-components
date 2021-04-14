@@ -9,7 +9,7 @@
     x-data="{ value: @entangle($attributes->wire('model')) }"
     x-init="tinymce.init({
         target: $refs.input,
-        plugins: [{{ $plugins }}],
+        plugins: ['{{ collect($plugins }}'],
         menubar: '{{ $menubar }}',
         toolbar: '{{ $toolbar }}',
         setup: function (editor) {
