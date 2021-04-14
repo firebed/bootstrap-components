@@ -26,6 +26,12 @@ trait WithSorting
         $this->sortField = $field;
     }
 
+    protected function setSorting($field, $direction): void
+    {
+        $this->sortField = $field;
+        $this->sortDirection = $direction;
+    }
+
     public function getQueryString()
     {
         $queryString = method_exists($this, 'queryString')
