@@ -1,5 +1,5 @@
 @props(['flush' => true])
 
-<div class="list-group @if($flush) list-group-flush @endif">
+<div {{ $attributes->class(['list-group', 'list-group-flush' => $flush]) }}>
     {{ $slot }}
 </div>
