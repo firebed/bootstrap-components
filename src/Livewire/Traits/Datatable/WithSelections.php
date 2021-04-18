@@ -45,7 +45,7 @@ trait WithSelections
         return filled($this->selected);
     }
 
-    public function clearSelection(): void
+    public function clearSelections(): void
     {
         $this->selectAll = false;
         $this->selected = [];
