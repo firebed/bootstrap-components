@@ -25,7 +25,7 @@
             <div class="text-center text-red-500" x-show="message.type === 'error'">
                 <x-bs::icons.x-circle width="80" height="80"/>
             </div>
-            <div x-text="message.title" class="h4 mb-0 fw-normal text-center text-gray-700"></div>
+            <div x-text="message.title" class="fs-4 text-center text-secondary"></div>
             <div x-html="message.content" class="text-gray-600 text-center"></div>
             <div class="d-flex justify-content-center">
                 <x-bs::button.success x-show="message.type === 'success'" data-bs-dismiss="modal" class="px-4">{{ __("OK") }}</x-bs::button.success>
