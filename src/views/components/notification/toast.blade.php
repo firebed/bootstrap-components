@@ -14,7 +14,7 @@
 
                 toast.querySelector('.title').innerText = message.title;
                 if (message.content.length > 0) {
-                    toast.querySelector('.content').innerText = message.content;
+                    toast.querySelector('.content').innerHTML = message.content;
                 } else {
                     toast.querySelector('.content').remove();
                     toast.querySelector('.body').classList.replace('align-items-start', 'align-items-center');
