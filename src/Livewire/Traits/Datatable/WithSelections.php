@@ -45,6 +45,12 @@ trait WithSelections
         return filled($this->selected);
     }
 
+    public function clearSelection(): void
+    {
+        $this->selectAll = false;
+        $this->selected = [];
+    }
+
     private function shouldSkipRender(): bool
     {
         return property_exists($this, 'skipRenderOnSelections')
