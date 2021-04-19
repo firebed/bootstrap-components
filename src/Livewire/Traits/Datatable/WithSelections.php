@@ -28,12 +28,12 @@ trait WithSelections
         }
     }
 
-    public function getSelectionsCount(): int
+    public function countSelected(): int
     {
         return count($this->selected);
     }
 
-    public function selections(): array
+    public function selected(): array
     {
         return $this->selected;
     }
