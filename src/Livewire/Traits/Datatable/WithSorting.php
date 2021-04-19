@@ -8,14 +8,13 @@ namespace Firebed\Livewire\Traits\Datatable;
  * Trait WithSorting
  * @package Firebed\Livewire\Traits\Datatable
  *
- * @property ?array queryString
  */
 trait WithSorting
 {
     public string $sortField     = '';
     public string $sortDirection = 'asc';
 
-    protected array $queryString = [
+    protected $queryString = [
         'sortField'     => ['except' => ''],
         'sortDirection' => ['except' => 'asc']
     ];
