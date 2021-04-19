@@ -15,6 +15,11 @@ trait WithSorting
     public string $sortField     = '';
     public string $sortDirection = 'asc';
 
+    protected array $queryString = [
+        'sortField'     => ['except' => ''],
+        'sortDirection' => ['except' => 'asc']
+    ];
+
     public function sortBy($field): void
     {
         if ($this->sortField === $field) {
@@ -30,17 +35,5 @@ trait WithSorting
     {
         $this->sortField = $field;
         $this->sortDirection = $direction;
-    }
-
-    public function getQueryString()
-    {
-        $queryString = method_exists($this, 'queryString')
-            ? $this->queryString()
-            : $this->queryString;
-
-        return array_merge([
-            'sortField'     => ['except' => ''],
-            'sortDirection' => ['except' => 'asc']
-        ], $queryString);
     }
 }
