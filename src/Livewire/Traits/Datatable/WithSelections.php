@@ -28,6 +28,11 @@ trait WithSelections
         }
     }
 
+    public function getSelectionCount(): int
+    {
+        return count($this->selected);
+    }
+
     public function updatedSelected(): void
     {
         if ($this->shouldSkipRender()) {
