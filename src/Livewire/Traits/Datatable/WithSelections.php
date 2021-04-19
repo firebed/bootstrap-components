@@ -28,9 +28,14 @@ trait WithSelections
         }
     }
 
-    public function getSelectionCount(): int
+    public function getSelectionsCount(): int
     {
         return count($this->selected);
+    }
+
+    public function selections(): array
+    {
+        return $this->selected;
     }
 
     public function updatedSelected(): void
