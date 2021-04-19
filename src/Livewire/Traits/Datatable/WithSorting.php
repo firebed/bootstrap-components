@@ -14,10 +14,13 @@ trait WithSorting
     public string $sortField     = '';
     public string $sortDirection = 'asc';
 
-    protected $queryString = [
-        'sortField'     => ['except' => ''],
-        'sortDirection' => ['except' => 'asc']
-    ];
+    protected function queryString(): array
+    {
+        return [
+            'sortField'     => ['except' => ''],
+            'sortDirection' => ['except' => 'asc']
+        ];
+    }
 
     public function sortBy($field): void
     {
