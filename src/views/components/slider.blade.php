@@ -15,9 +15,8 @@
     'vertical' => 'false', // Set the slider direction to vertical
     'spacing' => '0', // Spacing between slides in pixel
     'autoplay' => 'true',
-    'interval' => '2000',
+    'interval' => '4000',
     'dots' => 'false',
-    'nav' => 'true',
 
     'slidesSm'  => null,
     'slidesMd'  => null,
@@ -61,8 +60,8 @@
         player: null,
         autoplay: {{ $autoplay }},
         interval: {{ $interval }},
-        pause() { clearInterval(this.player) },
-        play() {
+        pause: function() { clearInterval(this.player) },
+        play: function() {
             if (this.autoplay) {
                 this.pause()
                 this.player = setInterval(() => this.slider.next(), this.interval)
@@ -76,19 +75,21 @@
             spacing: {{ $spacing }},
             vertical: {{ $vertical }},
             breakpoints: {{ $breakpointsJson }},
-
-            dragStart: () => {
-                pause()
-            },
-            dragEnd: () => {
-                play()
-            },
+            dragStart: () => pause(),
+            dragEnd: () => play(),
         })
+
+        if ($el.querySelector('[data-slider-prev]'))
+            $el.querySelector('[data-slider-prev]').addEventListener('click', () => slider.prev())
+
+        if ($el.querySelector('[data-slider-next]'))
+            $el.querySelector('[data-slider-next]').addEventListener('click', () => slider.next())
+
         play()
      "
-     x-on:mouseover="pause()"
-     x-on:mouseout="play()"
-        {{ $attributes->class('keen-slider row flex-nowrap overflow-hidden') }}
+     x-on:mouseenter="pause()"
+     x-on:mouseleave="play()"
+        {{ $attributes->class('keen-slider row flex-nowrap') }}
 >
     {{ $slot }}
 </div>
