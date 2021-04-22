@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Firebed\Livewire\Traits\Datatable;
+namespace Firebed\Livewire\Traits;
 
 
 trait WithCustomPaginationView
