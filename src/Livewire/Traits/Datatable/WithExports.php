@@ -28,7 +28,7 @@ trait WithExports
 
         $file = $this->export();
         if ($file) {
-            $this->showSuccessToast('Excel ready!');
+            $this->showSuccessToast('File ready!');
         }
 
         return $file;
