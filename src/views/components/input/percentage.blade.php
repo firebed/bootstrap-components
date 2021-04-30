@@ -28,6 +28,7 @@
             modifyValueOnWheel            : false,
             emptyInputBehavior            : '{{ $emptyInputBehavior }}'
         })
+        $watch('value', v => document.activeElement !== $el ? $nextTick(() => AutoNumeric.set($el, v)) : 0)
         $el.addEventListener('autoNumeric:rawValueModified', evt => value = evt.detail.newRawValue)"
         {{ $attributes->whereDoesntStartWith('wire:model')->class(['form-control', 'is-invalid' => $error && $errors->has($error)]) }}>
 
