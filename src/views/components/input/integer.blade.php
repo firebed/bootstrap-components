@@ -8,7 +8,11 @@
 
 <input type="text"
        autocomplete="off"
-       x-data="{ value: @entangle($attributes->wire('model')) }"
+       @if($attributes->wire('model')->value)
+        x-data="{ value: @entangle($attributes->wire('model')) }"
+       @else
+        x-data="{ value: '' }"
+       @endif
        x-init="
         new AutoNumeric($el, value, {
             digitGroupSeparator           : '',
