@@ -6,6 +6,7 @@
 ])
 
 <div
+    wire:ignore
     x-data="{ value: @entangle($attributes->wire('model')) }"
     x-init="tinymce.init({
         target: $refs.input,
@@ -19,7 +20,7 @@
             $watch('value', v => !editor.hasFocus() && editor.setContent(v))
         }
     })"
-    wire:ignore
+    class="d-grid"
 >
     <textarea x-ref="input" {{ $attributes->whereDoesntStartWith('wire:model')->class('form-control opacity-0') }}></textarea>
 </div>
