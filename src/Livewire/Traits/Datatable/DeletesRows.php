@@ -52,6 +52,11 @@ trait DeletesRows
         }
 
         $this->clearSelections();
+
+        if (property_exists($this, 'model') && method_exists($this, 'makeEmptyModel')) {
+            $this->model = $this->makeEmptyModel();
+        }
+
         $this->showSuccessToast("Delete successful!", "$count row were affected.");
     }
 
