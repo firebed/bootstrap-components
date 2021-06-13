@@ -1,8 +1,9 @@
 @props([
-    'error' => NULL
+    'error' => NULL,
+    'accept' => NULL
 ])
 
-<input type="file" {{ $attributes->class(['form-control', 'is-invalid' => $error && $errors->has($error)]) }}>
+<input type="file" {{ $attributes->class(['form-control', 'is-invalid' => $error && $errors->has($error)]) }} @if($accept) accept="{{ $accept }}" @endif>
 
 @if($error)
     @error($error)

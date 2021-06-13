@@ -1,6 +1,7 @@
 @props([
     'menubar' => '',
     'plugins' => '',
+    'pasteAsText' => true,
     'toolbar' => 'fontsizeselect | bold italic underline | forecolor | alignleft aligncenter alignright alignjustify | outdent indent',
     'error'   => null
 ])
@@ -13,6 +14,9 @@
         plugins: ['{{ $plugins }}'],
         menubar: '{{ $menubar }}',
         toolbar: '{{ $toolbar }}',
+        entity_encoding: 'raw',
+        paste_as_text: {{ $pasteAsText }},
+        relative_urls : false,
         setup: function (editor) {
             //editor.on('input', e => value = editor.getContent())
             editor.on('change', e => value = editor.getContent())
