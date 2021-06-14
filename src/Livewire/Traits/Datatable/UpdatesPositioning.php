@@ -1,15 +1,15 @@
 <?php
 
 
-namespace Firebed\Livewire\Traits\Datatable;
+namespace Firebed\Components\Livewire\Traits\Datatable;
 
 
-use Firebed\Livewire\Traits\SendsNotifications;
+use Firebed\Components\Livewire\Traits\SendsNotifications;
 use Illuminate\Support\Facades\DB;
 
 /**
  * Trait UpdatesPositioning
- * @package Firebed\Livewire\Traits\Datatable
+ * @package Firebed\Components\Livewire\Traits\Datatable
  *
  * @mixin SendsNotifications
  */

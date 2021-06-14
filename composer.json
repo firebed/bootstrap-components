@@ -17,13 +17,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Firebed\\": "src/"
+      "Firebed\\Components\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Firebed\\BootstrapServiceProvider"
+        "Firebed\\Components\\BootstrapServiceProvider"
       ]
     }
   },

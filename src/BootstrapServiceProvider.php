@@ -1,6 +1,6 @@
 <?php
 
-namespace Firebed;
+namespace Firebed\Components;
 
 use Illuminate\Support\ServiceProvider;
 

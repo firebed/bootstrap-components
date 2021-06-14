@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Firebed\Livewire\Traits\Datatable;
+namespace Firebed\Components\Livewire\Traits\Datatable;
 
 
 use Illuminate\Support\Collection;
 
 /**
  * Trait WithSelections
- * @package Firebed\Livewire\Traits\Datatable
+ * @package Firebed\Components\Livewire\Traits\Datatable
  *
  * @method void skipRender()
  */

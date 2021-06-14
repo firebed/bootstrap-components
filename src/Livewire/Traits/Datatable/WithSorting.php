@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Firebed\Livewire\Traits\Datatable;
+namespace Firebed\Components\Livewire\Traits\Datatable;
 
 
 /**
  * Trait WithSorting
- * @package Firebed\Livewire\Traits\Datatable
+ * @package Firebed\Components\Livewire\Traits\Datatable
  *
  */
 trait WithSorting

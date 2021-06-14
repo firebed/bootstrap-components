@@ -1,5 +1,5 @@
 @php
-    $company = $company ?? config('app.name');
+    $company = $company ?? ''
 @endphp
 
 <div class="col-auto w-100 w-lg-17r px-0 sticky-top" x-data="{ show: false }">

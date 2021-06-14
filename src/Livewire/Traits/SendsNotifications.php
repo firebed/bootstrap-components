@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Firebed\Livewire\Traits;
+namespace Firebed\Components\Livewire\Traits;
 
 
 /**
@@ -9,7 +9,7 @@ namespace Firebed\Livewire\Traits;
  *
  * @method dispatchBrowserEvent($event, $data = null)
  *
- * @package Firebed\Livewire\Traits
+ * @package Firebed\Components\Livewire\Traits
  */
 trait SendsNotifications
 {
