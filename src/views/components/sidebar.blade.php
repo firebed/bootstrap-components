@@ -16,9 +16,11 @@
         </x-bs::button.primary>
     </div>
 
-    <div :class="{ 'show': show }" class="sidebar sticky-lg-top w-lg-17r overflow-auto scrollbar" data-simplebar data-bs-backdrop="false" style="--top: 3.5rem">
-        <div class="d-grid pb-5">
-            {{ $slot }}
+    <div :class="{ 'show': show }" class="sidebar sticky-lg-top w-lg-17r" data-bs-backdrop="false" style="--top: 3.5rem">
+        <div class="h-100" data-simplebar>
+            <div class="d-grid">
+                {{ $slot }}
+            </div>
         </div>
     </div>
 </div>
