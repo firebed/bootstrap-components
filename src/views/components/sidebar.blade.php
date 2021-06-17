@@ -1,8 +1,8 @@
-@php
-    $company = $company ?? ''
-@endphp
+@props([
+    'company' => 'Control Panel'
+])
 
-<div class="col-auto w-100 w-lg-17r px-0 sticky-top" x-data="{ show: false }">
+<div {{ $attributes->class('col-auto w-100 w-lg-17r px-0 sticky-top') }} x-data="{ show: false }">
     <div class="d-flex justify-content-between align-items-center sticky-top px-3" style="height: 3.5rem; background-color: rgb(49, 58, 70);">
         <div class="fs-5 fw-500 text-light d-flex justify-content-between">
             <div class="bg-pink-500 rounded w-2r text-center me-2">
