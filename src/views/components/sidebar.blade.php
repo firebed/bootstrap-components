@@ -16,7 +16,7 @@
         </x-bs::button.primary>
     </div>
 
-    <div :class="{ 'show': show }" class="sidebar sticky-lg-top w-lg-17r overflow-auto scrollbar" data-bs-backdrop="false" style="--top: 3.5rem">
+    <div :class="{ 'show': show }" class="sidebar sticky-lg-top w-lg-17r overflow-auto scrollbar" data-simplebar data-bs-backdrop="false" style="--top: 3.5rem">
         <div class="d-grid pb-5">
             {{ $slot }}
         </div>
