@@ -5,16 +5,20 @@
 ])
 
 <input
-        x-data="{ value: @entangle($attributes->wire('model'))}"
+        @if($attributes->wire('model')->value)
+            x-data="{ value: @entangle($attributes->wire('model'))}"
+            x-on:change="value = $event.target.value"
+            x-bind:value="value"
+        @else
+            x-data
+        @endif
         x-init="new Pikaday({
             field: $el,
             firstDay: {{ $firstDay }},
             format: '{{ $format }}',
             onOpen() { this.setMoment(moment($el.value, '{{ $format }}')) }
         })"
-        x-on:change="value = $event.target.value"
         {{ $attributes->whereDoesntStartWith('wire:model')->class(['form-control', 'is-invalid' => $error && $errors->has($error)]) }}
-        x-bind:value="value"
         autocomplete="off"
 />
 
