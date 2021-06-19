@@ -1,11 +1,17 @@
 @props([
     'error' => NULL,
+    'firstDay' => 1,
     'format' => 'DD/MM/YYYY'
 ])
 
 <input
         x-data="{ value: @entangle($attributes->wire('model'))}"
-        x-init="new Pikaday({ field: $el, format: '{{ $format }}', onOpen() { this.setMoment(moment($el.value, '{{ $format }}')) } })"
+        x-init="new Pikaday({
+            field: $el,
+            firstDay: {{ $firstDay }},
+            format: '{{ $format }}',
+            onOpen() { this.setMoment(moment($el.value, '{{ $format }}')) }
+        })"
         x-on:change="value = $event.target.value"
         {{ $attributes->whereDoesntStartWith('wire:model')->class(['form-control', 'is-invalid' => $error && $errors->has($error)]) }}
         x-bind:value="value"
