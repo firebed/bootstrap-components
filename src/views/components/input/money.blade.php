@@ -2,11 +2,11 @@
     'error' => NULL,
     'min' => '0',
     'max' => '10000000000000',
-    'currency' => config('intl.currency'),
-    'groupsSeparator' => config('intl.group_separator'),
-    'decimalSeparator' => config('intl.decimal_separator'),
-    'currencyPlacement' => config('intl.currency_placement'),
-    'signPlacement' => config('intl.sign_placement'),
+    'currencySymbol' => config('eshop.currency_symbol'),
+    'groupsSeparator' => config('eshop.group_separator'),
+    'decimalSeparator' => config('eshop.decimal_separator'),
+    'currencyPlacement' => config('eshop.currency_placement'),
+    'signPlacement' => config('eshop.sign_placement'),
     'emptyInputBehavior' => 'null'
 ])
 
@@ -18,7 +18,7 @@
             digitGroupSeparator           : '{{ $groupsSeparator }}',
             decimalCharacter              : '{{ $decimalSeparator }}',
             decimalCharacterAlternative   : '{{ $groupsSeparator }}',
-            currencySymbol                : '{{ $currency }}',
+            currencySymbol                : '{{ $currencySymbol }}',
             currencySymbolPlacement       : '{{ $currencyPlacement }}',
             negativePositiveSignPlacement : '{{ $signPlacement }}',
             minimumValue                  : '{{ $min }}',
